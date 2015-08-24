@@ -2748,7 +2748,8 @@ public final class String
         return result;
     }
 
-    /**
+    /**格式化字符：调用 Formatter().format(format, args)方法
+     * 
      * Returns a formatted string using the specified format string and
      * arguments.
      *

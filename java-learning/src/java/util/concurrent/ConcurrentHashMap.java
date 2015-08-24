@@ -42,7 +42,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 
-/**
+/**Hash Table 支持线程安全,这个类也是，
  * A hash table supporting full concurrency of retrievals and
  * adjustable expected concurrency for updates. This class obeys the
  * same functional specification as {@link java.util.Hashtable}, and
@@ -178,7 +178,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
 
     /* ---------------- Fields -------------- */
 
-    /**
+    /**一个静态私有类:Holder
      * holds values which can't be initialized until after VM is booted.
      */
     private static class Holder {

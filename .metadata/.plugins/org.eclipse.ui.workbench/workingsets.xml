@@ -3,20 +3,20 @@
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426493398757_0" label="springside-project" name="springside-project">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-examples" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-parent" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-core" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside4-4.1.0.GA" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-core" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-extension" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/showcase" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-test" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/showcase" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/quickstart" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springside-modules" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1431064881682_2" label="spring-data-jpa-examples-parent" name="spring-data-jpa-examples-parent"/>
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438592904565_3" label="weixin4j" name="weixin4j">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j-qy" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j-base" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j-mp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/weixin4j-base" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426497364185_1" label="Window Working Set" name="Aggregate for window 1426497364185"/>
 </workingSetManager>

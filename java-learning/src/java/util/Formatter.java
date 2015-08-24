@@ -2467,6 +2467,7 @@ public final class Formatter implements Closeable, Flushable {
         int lasto = -1;
 
         FormatString[] fsa = parse(format);
+        
         for (int i = 0; i < fsa.length; i++) {
             FormatString fs = fsa[i];
             int index = fs.index();

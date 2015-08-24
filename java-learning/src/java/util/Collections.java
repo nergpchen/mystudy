@@ -1996,7 +1996,9 @@ public class Collections {
      * @return a synchronized view of the specified map.
      */
     public static <K,V> Map<K,V> synchronizedMap(Map<K,V> m) {
-        return new SynchronizedMap<>(m);
+        
+    	return new SynchronizedMap<>(m);
+        
     }
 
     /**

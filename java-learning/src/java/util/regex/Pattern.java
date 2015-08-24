@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.Arrays;
 
 
-/**
+/**正则表达式的类.
  * A compiled representation of a regular expression.
  *
  * <p> A regular expression, specified as a string, must first be compiled into

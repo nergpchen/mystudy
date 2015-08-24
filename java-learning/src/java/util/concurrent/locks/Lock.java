@@ -36,13 +36,15 @@
 package java.util.concurrent.locks;
 import java.util.concurrent.TimeUnit;
 
-/**
+/**Lock接口：
+ * Lock接口的实现提供了币synchronized更多的锁的操作的方法.
+ * 
  * {@code Lock} implementations provide more extensive locking
  * operations than can be obtained using {@code synchronized} methods
  * and statements.  They allow more flexible structuring, may have
  * quite different properties, and may support multiple associated
  * {@link Condition} objects.
- *
+ * 一个锁是用来控制多线程对共享资源的管理.
  * <p>A lock is a tool for controlling access to a shared resource by
  * multiple threads. Commonly, a lock provides exclusive access to a
  * shared resource: only one thread at a time can acquire the lock and
@@ -166,7 +168,9 @@ import java.util.concurrent.TimeUnit;
 public interface Lock {
 
     /**
-     * Acquires the lock.
+     * lock();
+     * 
+     * 
      *
      * <p>If the lock is not available then the current thread becomes
      * disabled for thread scheduling purposes and lies dormant until the
@@ -319,7 +323,7 @@ public interface Lock {
      */
     boolean tryLock(long time, TimeUnit unit) throws InterruptedException;
 
-    /**
+    /**释放当前锁
      * Releases the lock.
      *
      * <p><b>Implementation Considerations</b>

@@ -6,3 +6,4 @@ import org.springside.examples.quickstart.entity.User;
 public interface UserDao extends PagingAndSortingRepository<User, Long> {
 	User findByLoginName(String loginName);
 }
+
