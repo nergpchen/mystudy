@@ -2,7 +2,11 @@ package com.mystudy.study.spring;
 
 /**
  * 参考资料：https://en.wikipedia.org/wiki/Aspect-oriented_programming
- * AOP知识的学习需要了解以下知识点： AOP的基本概念： 1:AOP是什么?都有哪些属性 2:AOP解决了什么问题，技术背景 3:AOP体系结构
+ * AOP知识的学习需要了解以下知识点： AOP的基本概念： 
+ *1:AOP是什么?
+ *都有哪些属性 
+ *2:AOP解决了什么问题，技术背景 
+ *3:AOP体系结构
  * 4:AOP的意义 5:AOP的特点有哪些？ 6:AOP的适用场景 7:AOP的注意事项 8:AOP如何实现的方法
  * 9:AOP相关技术点/相关学习资料/相关案例代码
  * 
@@ -84,6 +88,5 @@ public class StudyAOP {
 	public void 实现方式(){
 		System.out.println("实现方式");
 	}
-	
 	
 }

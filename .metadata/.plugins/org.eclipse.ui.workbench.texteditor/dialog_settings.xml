@@ -13,15 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="sync" key="selection"/>
+		<item value="Heap" key="selection"/>
 		<list key="findhistory">
-			<item value="sync"/>
-			<item value="hibernate"/>
-			<item value="cach"/>
-			<item value="cache"/>
-			<item value="calendar"/>
-			<item value="NORM_DATE_FORMAT"/>
-			<item value="threadLocals"/>
+			<item value="heap"/>
+			<item value="read"/>
+			<item value="concurrenthashmap"/>
+			<item value="iterator"/>
+			<item value="header"/>
+			<item value="volatile int runState;"/>
+			<item value="run state"/>
+			<item value="volatile "/>
 		</list>
 		<list key="replacehistory">
 		</list>
