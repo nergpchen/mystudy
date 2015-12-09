@@ -1,14 +1,17 @@
 package com.mystudy.study.spring;
 
+import org.springframework.jdbc.support.nativejdbc.Jdbc4NativeJdbcExtractor;
+
+import com.mystudy.study.java.base.StudyJavaProxy;
+
 /**
  * 参考资料：https://en.wikipedia.org/wiki/Aspect-oriented_programming
  * AOP知识的学习需要了解以下知识点： AOP的基本概念： 
- *1:AOP是什么?
- *都有哪些属性 
- *2:AOP解决了什么问题，技术背景 
- *3:AOP体系结构
+ * 1:AOP是什么?都有哪些属性? 
+ * 2:AOP解决了什么问题，技术背景 
+ * 3:AOP体系结构
  * 4:AOP的意义 5:AOP的特点有哪些？ 6:AOP的适用场景 7:AOP的注意事项 8:AOP如何实现的方法
- * 9:AOP相关技术点/相关学习资料/相关案例代码
+ * 5:AOP相关技术点/相关学习资料/相关案例代码
  * 
  * @author Administrator
  *
@@ -34,7 +37,8 @@ public class StudyAOP {
 	}
 
 	/**
-	 * AOP是一种新的编程思想，那么一定有一些基本的概念我们去要了解和学习的。 1.通知(Advice):
+	 * AOP是一种新的编程思想，那么一定有一些基本的概念我们去要了解和学习的。 
+	 * 1.通知(Advice):
 	 * 通知定义了切面是什么以及何时使用。描述了切面要完成的工作和何时需要执行这个工作。
 	 * 
 	 * 2.连接点(Joinpoint): 程序能够应用通知的一个“时机”，这些“时机”就是连接点，例如方法被调用时、异常被抛出时等等。
@@ -89,4 +93,18 @@ public class StudyAOP {
 		System.out.println("实现方式");
 	}
 	
+	/**动态代理技术描述：
+	 * 动态代理是一种代理模式的一种模式,代理模式是指为某个对象提供一种代理，通过这个代理来访问某个对象，从而可以控制对对象的访问，或者提供一些其他的功能。
+	 * 静态代理：由程序员创建或特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+	 * 那么动态代理模式是什么呢？是在程序运行期间,生成代理对象。
+	 * java提供了动态代理的实现方式：在ava.lang.reflect包下提供了反射技术可以用来实现动态代理.
+	 * 在 {@link StudyJavaProxy} 中详细描述了学习java动态代理技术的知识点.
+	 * 这个主意是学习Spring的动态代理技术
+	 * 动态代理技术的实现原理
+	 * 动态代理技术设计到的类有哪些：
+	 * Spring 提供了@JdkDynamicAopProxy 类来实现动态代理技术
+	 */
+	public void 学习动态代理技术(){
+		
+	}
 }
