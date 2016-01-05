@@ -1,7 +1,13 @@
 package com.mystudy.study.java.base;
+
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+
 /**引用资料：
  * 1:https://en.wikipedia.org/wiki/Enumerated_type
  * 2:http://docs.oracle.com/javase/1.5.0/docs/guide/language/enums.html
+ * 3:http://www.cnblogs.com/hemingwang0902/archive/2011/12/29/2306263.html
  * 枚举的学习：
  * 基本概念：
  * 1：枚举的定义：枚举是什么？不是什么?有相似的概念吗？
@@ -52,6 +58,13 @@ public class StudyEnum {
     public static com.hmw.test.EnumTest valueOf(java.lang.String);
     com.hmw.test.EnumTest(java.lang.String, int, int, com.hmw.test.EnumTest);
 }	
+	所以所有的枚举类是Enum的子类，Enum是一个抽象类
+	在Enum.java中提供了下面的方法
+	    private void readObject(ObjectInputStream in) throws IOException,
+        ClassNotFoundException {
+        throw new InvalidObjectException("can't deserialize enum");
+    }
+    这个方法说明枚举类不支持序列化方法。
 	 */
 	public void 原理分析(){
 		

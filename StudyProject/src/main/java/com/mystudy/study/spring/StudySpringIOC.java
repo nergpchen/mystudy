@@ -4,10 +4,14 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-/**
+/**学习资料：
+ * https://en.wikipedia.org/wiki/Spring_Framework
  * SpringIOC容器的学习:
- * IOC容器的功能有哪些？
- * SpringIOC容器的使用
+ * 一:
+ * SpringIOC容器的介绍:
+ * 1:IOC容器的功能有哪些？
+ * 2:容器的组件有哪些？
+ * 3:SpringIOC容器的使用
  * IOC容器的框架结构?
  * IOC容器的核心接口有哪些？
  * IOC容器的公共接口有哪些？
@@ -22,15 +26,12 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class StudySpringIOC {
 
 	/**
-	 *  ApplicationContext context = new FileSystemXmlApplicationContext("applicationContext.xml"); 
-	 *  context就是一个IOC的容器.AppliactionContext是一个容器接口,FileSystemXmlApplicationContext是一个容器的实现类.
-	 *  
+	 * 
 	 */
-	public void howTouse(){
-		  ApplicationContext context = new FileSystemXmlApplicationContext(   
-	                "applicationContext.xml");   
-	       
+	public void IOC容器介绍(){
+		
 	}
+
 	/**
 	 * SpringIOC容器的框架:
 	 * http://dl2.iteye.com/upload/attachment/0063/3120/0e57dc20-6b26-3217-878e-6bd766833cf4.jpg
@@ -103,5 +104,16 @@ public class StudySpringIOC {
 	 */
 	public void studyWebAppliacationContext(){
 		
+	}
+	
+	/**
+	 *  ApplicationContext context = new FileSystemXmlApplicationContext("applicationContext.xml"); 
+	 *  context就是一个IOC的容器.AppliactionContext是一个容器接口,FileSystemXmlApplicationContext是一个容器的实现类.
+	 *  
+	 */
+	public void 怎么使用(){
+		  ApplicationContext context = new FileSystemXmlApplicationContext(   
+	                "applicationContext.xml");   
+	       
 	}
 }
