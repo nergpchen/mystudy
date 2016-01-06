@@ -1,4 +1,4 @@
-package com.mystudy.study;
+package com.mystudy.study.mybatis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,14 +25,20 @@ import org.apache.shiro.session.Session;
  * 2:http://mybatis.org/mybatis-3/zh/index.html
  * 3:https://en.wikipedia.org/wiki/MyBatis
  * 4:http://www.cnblogs.com/xdp-gacl/p/4261895.html
+ * 
  * MyBatis基础知识:
- * 1:Batis是什么：
- * 2:Batis的作用:
- * 3:Batis发展背景:
- * 4:Batis的框架结构
- * 5:Batis的特点:
- * 6:Batis的核心类
- * 7:Batis的使用:Demo
+ * 		1:MyBatis是什么：
+ * 		2:MyBatis的作用:
+ * 		3:MyBatis发展背景:
+ * 		4:MyBatis的框架结构:
+ * 		5:MyBatis的特点:
+ * 		6:MyBatis的核心类:
+ * 		7:MyBatis的使用:
+ * MyBatis进阶知识：
+ *      1:MyBatis核心代码的源码分析
+ *      2:工作流程：
+ *      3:使用注意事项
+ *      4:原理
  * @author chenxiong
  *
  */
@@ -89,8 +95,19 @@ public class StudyMyBatis {
 	 * 下面是JDBC的大致流程
 	 *  我们在使用JDBC来进行开发的时候，比如从数据库查询一个表,则需要先和数据库连接连接，获取一个连接对象：Connection ,通过Statement stmt = con.createStatement() ;  通过statement执行sql查询对象返回结果集Result,然后对获得的结果集进行处理。
 	 *  那么MyBatis的流程如何呢？
-	 *  1:加载配置并初始化 : 将SQL的配置信息加载成为一个个MappedStatement对象（包括了传入参数映射配置、执行的SQL语句、结果映射配置），存储在内存中.
-	 *  2:接收调用请求         : 
+	 * 1:通过SqlSessionFactoryBuilder建立一个SqlSessionFactory对象
+	 * 2:从SqlSessionFactory返回一个SqlSession
+	 * 3:调用sqlSesson的api执行增删改查     :
+	 *    增删改查的处理过程：
+			(A)根据SQL的ID查找对应的MappedStatement对象。
+			(B)根据传入参数对象解析MappedStatement对象，得到最终要执行的SQL和执行传入参数。
+			(C)获取数据库连接，根据得到的最终SQL语句和执行传入参数到数据库执行，并得到执行结果。
+			(D)根据MappedStatement对象中的结果映射配置对得到的执行结果进行转换处理，并得到最终的处理结果。
+			(E)释放连接资源。
+	  4:返回处理结果将最终的处理结果返回。
+	  所以从上面的流程可以知道，首先和数据库建立连接,传入参数，解析Sql语句,得到执行结果，映射执行结果
+	    在这个过程中涉及到的类如下：SqlSessionFactoryBuilder、SqlSession、MappedStatement、Executor、StatementHandler
+	        
 	 */
 	public void 工作流程(){
 		
@@ -98,89 +115,21 @@ public class StudyMyBatis {
 	
 	
 	/**
-	 * 从xml文件构建SqlSessionFactory:
-	 * 过程分析:
-	 * 1:SqlSessionFactoryBuilder.build():先通过XMLConfigBuilder.parse()创建一个Configuration对象
-	 * 2:然后通过 new DefaultSqlSessionFactory(Configuration) 构建的SqlSessionFactoryBuilder对象,Configuration对象作为参数传入进去
-	 * 
-	 * 所以这里要学习的几个类包括：
-	 *   1:SqlSessionFactoryBuilder:SqlSessionFactory构建器，使用了构建模式.
-	 *   2:DefaultSqlSessionFactory :SqlSessionFactory的实现类，其中只有一个Configuration类型的对象的域
-	 *   3:XMLConfigBuilder:用来对xml配置进行解析处理
-	 *   4:Configuration  : 这个类是核心类，需要重点学习.存储相关的配置信息
+	 * SqlSessionFactoryBuilder、
+	 * SqlSession、
+	 * MappedStatement、
+	 * Executro、
+	 * StatementHandler
 	 */
-	public SqlSessionFactory getSqlSessionFactory(){
-		String resource = "org/mybatis/example/mybatis-config.xml";
-		InputStream inputStream = null;
-		try {
-			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);	
-			inputStream = Resources.getResourceAsStream(resource);
-			return sqlSessionFactory;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	public void 需要学习的类(){
+		
 	}
 	
 	/**
-	 * 获取一个SqlSession:SqlSession用来执行命令，获取Mappers和管理事务(Through this interface you can execute commands, get mappers and manage transactions)
-	 * 
-	 * 通过SqlSessionFactory.openSession()获取一个SqlSession,重点是了解实现原理.
-	 * 源码：下面是openSession()的源码：涉及到了几个类：Transaction、Environment、TransactionFactory、Executor、DefaultSqlSession、ErrorContext
-	 * Transaction tx = null;
-    try {
-      final Environment environment = configuration.getEnvironment();
-      final TransactionFactory transactionFactory = getTransactionFactoryFromEnvironment(environment);
-      tx = transactionFactory.newTransaction(environment.getDataSource(), level, autoCommit);
-      final Executor executor = configuration.newExecutor(tx, execType);
-      return new DefaultSqlSession(configuration, executor, autoCommit);
-    } catch (Exception e) {
-      closeTransaction(tx); // may have fetched a connection so lets call close()
-      throw ExceptionFactory.wrapException("Error opening session.  Cause: " + e, e);
-    } finally {
-      ErrorContext.instance().reset();
-    }
-     过程分析：1:首先通过Configuration对象获取一个Environment对象.
-        2:通过getTransactionFactoryFromEnvironment(environment) 获得一个 TransactionFactory.
-        3:创建一个事务对象：tx = transactionFactory.newTransaction()
-        4:Executor对象：通过configuration.newExecutor()获取一个Executor对象.
-        5:返回结果前执行：ErrorContext.instance().reset();
-        6:返回一个SqlSession对象：new DefaultSqlSession(configuration, executor, autoCommit);
-
-  在获取一个SqlSession中,先后建立一个Transaction对象和一个Executor对象，然后以参数形式传入到DefaultSqlSession构造函数中.
-     需要学习的:
-      1:SqlSessionAPI
-      
-      2:Transaction接口
-      
-      3:DefaultSqlSession的实现源码
-      
-      4:ErrorContext做什么用的.
+	 * http://www.mybatis.org/mybatis-3/zh/dynamic-sql.html#
+	 * 动态Sql是一个强大的特性,
 	 */
-	public SqlSession openSqlSession(){
-		SqlSessionFactory sessionFactory = getSqlSessionFactory();
-		SqlSession session = sessionFactory.openSession();
-		return session;
-	}
-	
-	public void select(){
-		SqlSession session = openSqlSession();
-		try{
-			List<Object> result= session.selectList("select * from wechat.dbo.sub_order");
-			System.out.println(result.size());
-		}finally{
-			session.close();
-		}
-		
-	}
-	/** 1:SqlSessionFactoryBuilder:SqlSessionFactory构建器，使用了构建模式.
-	 *   2:DefaultSqlSessionFactory :SqlSessionFactory的实现类，其中只有一个Configuration类型的对象的域
-	 *   3:XMLConfigBuilder:用来对xml配置进行解析处理
-	 *   4:Configuration  : 这个类是核心类，需要重点学习.存储相关的配置信息
-	 * 
-	 */
-	public void 需要学习的类(){
+	public void 动态Sql(){
 		
 	}
 }
