@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
 <fullyQualifiedTypeName name="org.springframework.context.support.FileSystemXmlApplicationContext"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactory"/>
@@ -32,4 +31,24 @@
 <fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
 <fullyQualifiedTypeName name="java.nio.channels.FileChannel"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.DispatcherServlet"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerExecutionChain"/>
+<fullyQualifiedTypeName name="com.sun.jna.Library.Handler"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerInterceptor"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.support.nativejdbc.Jdbc4NativeJdbcExtractor"/>
+<fullyQualifiedTypeName name="com.mystudy.study.java.base.StudyJavaProxy"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="java.util.regex.Matcher"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.apache.taglibs.standard.resources.Resources"/>
+<fullyQualifiedTypeName name="com.google.common.io.Resources"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.shiro.session.Session"/>
 </qualifiedTypeNameHistroy>

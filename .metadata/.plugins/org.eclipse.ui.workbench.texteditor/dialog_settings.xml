@@ -12,17 +12,17 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
-		<item value="true" key="wholeword"/>
-		<item value="Heap" key="selection"/>
+		<item value="false" key="wholeword"/>
+		<item value="environment" key="selection"/>
 		<list key="findhistory">
-			<item value="heap"/>
-			<item value="read"/>
-			<item value="concurrenthashmap"/>
-			<item value="iterator"/>
-			<item value="header"/>
-			<item value="volatile int runState;"/>
-			<item value="run state"/>
-			<item value="volatile "/>
+			<item value="environment"/>
+			<item value="mybat"/>
+			<item value="my"/>
+			<item value="bat"/>
+			<item value="ba"/>
+			<item value="serviceInterface"/>
+			<item value="targetSource"/>
+			<item value="matchBeforeAdvisor"/>
 		</list>
 		<list key="replacehistory">
 		</list>
